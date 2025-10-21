@@ -9,8 +9,8 @@ function addMovie() {
 
     // do nothing if field is empty
     if (movie === '') {
-    	alert("Please enter a movie!");
-	return;
+        alert("Please enter a movie!");
+        return;
     }
 
     // add movie to the array and prepare the input field for display
@@ -25,10 +25,10 @@ function displayMovies() {
 
     // loop through movies array and add to the list
     for (let i = 0; i < movies.length; ++i) {
-	const listItem = document.createElement('li');
-	listItem.classList.add('collection-item');
-	listItem.innerHTML = `<span class="movie-title">${movies[i]}</span><p class="remove-btn" onclick="removeMovie(${i})">Watched</p>`;
-	movieList.appendChild(listItem);
+        const listItem = document.createElement('li');
+        listItem.classList.add('collection-item');
+        listItem.innerHTML = `<span class="movie-title">${movies[i]}</span><p class="remove-btn" onclick="removeMovie(${i})">Watched</p>`;
+        movieList.appendChild(listItem);
     }
 }
 
