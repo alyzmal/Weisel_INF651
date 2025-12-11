@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Psychronic - The Emotion Journal</title>
+	<link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+	<div class="container">
+	    <header>
+		<h1>Psychronic</h1>
+		<h3>Your Mind, Your Time</h3>
+		<button id="darkModeToggle" aria-label="Toggle Dark Mode">🌙</button>
+	    </header>
+	    <main>
+		<!-- Today's entry -->
+		<section id="daily-report">
+		    <button id="openDailyReport">Begin Today's Entry</button>
+		    <!-- Mood and energy sliders -->
+		    <div id="daily-entry" class="blurred">
+			<section id="sliders">
+			    <div class="slider-group">
+				<label for="mood">Mood</label>
+				<input type="range" name="mood" id="mood" min="1" max="5">
+				<div class="slider-scale" aria-hidden="true">
+				    <span>😞</span><span>😐</span><span>🙂</span><span>😊</span><span>😄</span>
+				</div>
+			    </div>
+			    <div class="slider-group">
+				<label for="energy">Energy</label>
+				<input type="range" name="energy" id="energy" min="1" max="5">
+				<div class="slider-scale" aria-hidden="true">
+				    <span>💤</span><span>😴</span><span>🙂</span><span>⚡</span><span>🔥</span>
+				</div>
+			    </div>
+			</section>
+			<!-- Additional tags for the record -->
+			<section class="tags">
+			    <fieldset>
+				<legend>What influenced your day today?</legend>
+				<label><input type="checkbox" name="tags" value="Sleep Issues"> Sleep Issues</label>
+				<label><input type="checkbox" name="tags" value="Stress"> Stress</label>
+				<label><input type="checkbox" name="tags" value="Social Anxiety"> Social Anxiety</label>
+				<label><input type="checkbox" name="tags" value="Workload"> Workload</label>
+				<label><input type="checkbox" name="tags" value="Exercise"> Exercise</label>
+				<label><input type="checkbox" name="tags" value="Creative Burst"> Creative Burst</label>
+			    </fieldset>
+			</section>
+			<!-- Custom comments if necessary -->
+			<section class="notes">
+			    <textarea id="notes" name="notes" placeholder="Write anything you want to remember about today..."></textarea>
+			</section>
+			<button id="submitDailyReport">Save Today's Entry</button>
+		    </div>
+		</section>
+		<!-- Long-term mood/energy statistics -->
+		<section id="analytics">
+		    <!-- Select which timescale to view, only one open at a time -->
+		    <nav id="analytics-tabs">
+			<button class="tab-button" data-view="week">Your Week</button>
+			<button class="tab-button" data-view="month">Your Month</button>
+			<button class="tab-button" data-view="year">Your Year</button>
+		    </nav>
+		    <section id="analytics-content">
+			<!-- WEEK VIEW -->
+			<div id="week-view" class="analytics-view" hidden>
+			    <h3>Mood and Energy Chart</h3>
+			    <div class="chart-wrapper" id="week-line-chart">
+				<!-- JS will generate SVG or Canvas here -->
+			    </div>
+			    <div class="tags-wrapper" id="week-tags">
+				<h3>Top Tags</h3>
+				<ul>
+				    <!-- JS inserts <li> elements here -->
+				</ul>
+			    </div>
+			</div>
+			<!-- MONTH VIEW -->
+			<div id="month-view" class="analytics-view" hidden>
+			    <h3>Mood and Energy Chart</h3>
+			    <div class="chart-wrapper" id="month-line-chart">
+				<!-- JS will generate SVG or Canvas here -->
+			    </div>
+			    <div class="tags-wrapper" id="month-tags">
+				<h3>Top Tags</h3>
+				<ul>
+				    <!-- JS inserts <li> elements here -->
+				</ul>
+			    </div>
+			</div>
+			<!-- YEAR VIEW -->
+			<div id="year-view" class="analytics-view" hidden>
+			    <h3>Mood and Energy Chart</h3>
+			    <div class="chart-wrapper" id="year-line-chart">
+				<!-- JS can insert SVG line chart for month -->
+			    </div>
+			    <div class="tags-wrapper" id="year-tags">
+				<h3>Top Tags</h3>
+				<ul>
+				    <!-- JS inserts <li> elements here -->
+				</ul>
+			    </div>
+			</div>
+		    </section>
+		</section>
+	    </main>
+	    <footer>
+		<p>Copyright © 2025 alyzmal<br>Check out my <a href="https://github.com/alyzmal">Github</a>!</p>
+	    </footer>
+	</div>
+	<script type="module" src="js/analytics.js"></script>
+	<script type="module" src="js/daily-entry.js"></script>
+	<script type="module" src="js/dark-mode.js"></script>
+	<script type="module" src="js/setup.js"></script>
+    </body>
+</html>
